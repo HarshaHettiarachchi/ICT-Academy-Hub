@@ -6,6 +6,7 @@ import { ThemeContext } from "../context/ThemeContext";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -13,12 +14,14 @@ export default function Navbar() {
     transition duration-300
     ${
       isActive
-        ? "text-blue-600 font-semibold"
-        : "text-gray-700 dark:text-gray-300 hover:text-blue-600"
+        ? "text-blue-600 dark:text-cyan-400 font-semibold"
+        : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400"
     }
     `;
 
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   return (
     <header
@@ -87,10 +90,10 @@ export default function Navbar() {
             <Code2 size={26} />
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h2
               className="
-                text-lg
+                text-base
                 sm:text-xl
                 font-bold
                 text-gray-900
@@ -106,6 +109,7 @@ export default function Navbar() {
                 text-xs
                 text-gray-500
                 dark:text-gray-400
+                whitespace-nowrap
               "
             >
               Learn • Build • Deploy
@@ -138,6 +142,7 @@ export default function Navbar() {
             Resources
           </NavLink>
 
+          {/* Theme Button */}
           <button
             onClick={toggleTheme}
             className="
@@ -156,9 +161,14 @@ export default function Navbar() {
             "
             aria-label="Toggle theme"
           >
-            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            {theme === "light" ? (
+              <Moon size={20} />
+            ) : (
+              <Sun size={20} />
+            )}
           </button>
 
+          {/* Ask Question */}
           <Link
             to="/ask-question"
             className="
@@ -185,9 +195,10 @@ export default function Navbar() {
             flex
             lg:hidden
             items-center
-            gap-2
+            gap-1
           "
         >
+          {/* Theme Button */}
           <button
             onClick={toggleTheme}
             className="
@@ -205,9 +216,14 @@ export default function Navbar() {
             "
             aria-label="Toggle theme"
           >
-            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            {theme === "light" ? (
+              <Moon size={20} />
+            ) : (
+              <Sun size={20} />
+            )}
           </button>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="
@@ -230,7 +246,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation Menu */}
       {isOpen && (
         <nav
           className="

@@ -19,7 +19,7 @@ export default function App() {
       <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-white transition-colors duration-300">
         <Navbar />
 
-        <main className="pt-20">
+        <main className="pt-20 lg:pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/lessons" element={<Lessons />} />
