@@ -16,17 +16,7 @@ import AskQuestion from "./pages/AskQuestion";
 export default function App() {
   return (
     <BrowserRouter basename="/ICT-Academy-Hub">
-      <div
-        className="
-          min-h-screen
-          bg-white
-          text-gray-900
-          dark:bg-gray-950
-          dark:text-white
-          transition-colors
-          duration-300
-        "
-      >
+      <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-950 dark:text-white transition-colors duration-300">
         <Navbar />
 
         <Routes>
