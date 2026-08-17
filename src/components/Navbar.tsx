@@ -6,17 +6,16 @@ import { ThemeContext } from "../context/ThemeContext";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `
-    transition duration-300
-    ${
-      isActive
-        ? "text-blue-600 dark:text-cyan-400 font-semibold"
-        : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400"
-    }
+      transition duration-300
+      ${
+        isActive
+          ? "text-blue-600 dark:text-cyan-400 font-semibold"
+          : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-cyan-400"
+      }
     `;
 
   const closeMenu = () => {
@@ -45,10 +44,9 @@ export default function Navbar() {
         className="
           max-w-7xl
           mx-auto
+          h-20
           px-4
           sm:px-6
-          py-3
-          sm:py-4
           flex
           items-center
           justify-between
@@ -83,18 +81,17 @@ export default function Navbar() {
               justify-center
               text-white
               shadow-lg
-              group-hover:scale-110
               transition-transform
+              group-hover:scale-110
             "
           >
             <Code2 size={26} />
           </div>
 
-          <div className="min-w-0">
+          <div className="hidden sm:block">
             <h2
               className="
-                text-base
-                sm:text-xl
+                text-xl
                 font-bold
                 text-gray-900
                 dark:text-white
@@ -109,11 +106,23 @@ export default function Navbar() {
                 text-xs
                 text-gray-500
                 dark:text-gray-400
-                whitespace-nowrap
               "
             >
               Learn • Build • Deploy
             </p>
+          </div>
+
+          <div className="sm:hidden">
+            <h2
+              className="
+                text-base
+                font-bold
+                text-gray-900
+                dark:text-white
+              "
+            >
+              ICT Academy
+            </h2>
           </div>
         </Link>
 
@@ -142,7 +151,6 @@ export default function Navbar() {
             Resources
           </NavLink>
 
-          {/* Theme Button */}
           <button
             onClick={toggleTheme}
             className="
@@ -168,7 +176,6 @@ export default function Navbar() {
             )}
           </button>
 
-          {/* Ask Question */}
           <Link
             to="/ask-question"
             className="
@@ -196,9 +203,9 @@ export default function Navbar() {
             lg:hidden
             items-center
             gap-1
+            shrink-0
           "
         >
-          {/* Theme Button */}
           <button
             onClick={toggleTheme}
             className="
@@ -223,7 +230,6 @@ export default function Navbar() {
             )}
           </button>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="
@@ -246,7 +252,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Menu */}
       {isOpen && (
         <nav
           className="
