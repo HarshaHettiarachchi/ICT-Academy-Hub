@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "HTML Basics",
+    "description": "Learn website structure, elements and semantic HTML.",
+    "level": "Beginner"
+  },
+  {
+    "id": 2,
+    "title": "CSS Styling",
+    "description": "Learn layouts, colors, animations and responsive design.",
+    "level": "Beginner"
+  },
+  {
+    "id": 3,
+    "title": "JavaScript",
+    "description": "Understand programming logic and web interactions.",
+    "level": "Intermediate"
+  },
+  {
+    "id": 4,
+    "title": "React Development",
+    "description": "Build modern user interfaces using React components.",
+    "level": "Advanced"
+  },
+  {
+    "id": 5,
+    "title": "TypeScript",
+    "description": "Write safer and maintainable frontend applications.",
+    "level": "Advanced"
+  }
+]
